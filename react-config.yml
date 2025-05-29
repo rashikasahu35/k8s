@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: react-config
+data:
+  server_uri: "http:localhost:9000"
+  api_key: "12345"
+  api_token: "abcde"

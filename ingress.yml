@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-for-reactapp-nginxapp
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: ingress.example
+      http:
+        paths:
+          - path: /nginx
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-service-nodeport
+                port:
+                  number: 80
+          - path: /react
+            pathType: Prefix
+            backend:
+              service:
+                name: react-service-nodeport
+                port:
+                  number: 3000
