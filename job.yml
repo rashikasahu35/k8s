@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name : busybox-job
+spec:
+  completions: 5
+  template: 
+    spec: 
+      containers: 
+        - name: busybox-job
+          image: busybox
+          command: ["echo", "Hello Rs"]
+      restartPolicy: "Never"
+
+
+
